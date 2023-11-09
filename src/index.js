@@ -85,7 +85,6 @@ function addValueForm () {
 
   function addValue () {
     let text = this.innerText;
-    console.log(text);
     input.value = text;
   }
 
@@ -127,18 +126,19 @@ function formeVrification() {
   inputs.forEach((item) => {
     item.addEventListener("blur", () => {
       item.parentElement.classList.remove("active");
+     
     });
 });
 
   function validation() {
     this.parentElement.classList.add("active");
     if (this.value.trim() == "" || this.value > 200 || this.parentElement.querySelector(".form__message_text").value.trim() == "" || this.parentElement.querySelector(".form__message_text").value > 200 ){
-      console.log(this.querySelector(".form__message_text"));
+      this.querySelector(".form__message_text");
       submit.setAttribute("disabled", "disabled");
       submit.classList.remove("active");
       
     } else {
-      console.log(inputs[inputs.length - 1]);
+      
       submit.removeAttribute("disabled");
       submit.classList.add("active");
     }
