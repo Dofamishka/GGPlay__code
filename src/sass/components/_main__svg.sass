@@ -1,0 +1,20 @@
+.main
+    &__svg
+        width: 65.8rem
+        height: 65.8rem
+        @include respond($breakpoint: tab-port)
+                grid-column: 1 / -1
+                width: 70rem
+        @include respond($breakpoint: phone)
+            width: 45rem
+                
+        &-wrapper
+            grid-column: 1 / 6
+            width: 100%
+            height: 100%
+            @include respond($breakpoint: tab-port)
+                grid-column: 1 / -1
+                display: flex
+                justify-content: center
+
+

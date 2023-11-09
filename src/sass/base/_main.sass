@@ -1,0 +1,45 @@
+@import "../abstracts/_mixins"
+@import "../abstracts/_variable"
+
+html
+    font-size: 62.5%
+    @include respond($breakpoint: big-screen)
+        font-size: 80%
+    @include respond($breakpoint: tab-land)
+        font-size: 45%
+    @include respond($breakpoint: tab-port)
+        font-size: 45%
+    @include respond($breakpoint: phone)
+        font-size: 43%
+
+body
+    @include text (1.6rem, 400, normal)
+    font-family: "inter"
+    color: $color-dark
+    background: $color-white
+
+.wrapper
+    display: grid
+    grid-template-columns: minmax(6rem, 1fr) [center-start] repeat(12, minmax(min-content, 12rem)) [center-end] minmax(6rem, 1fr) [full-end]
+    grid-template-rows: 21rem calc( 100vh - 21rem )
+    gap: 0 1.6rem
+    margin-bottom: 4rem
+    @include respond($breakpoint: tab-port)
+        grid-template-columns: minmax(3rem, 1fr) [center-start] repeat(6, minmax(min-content, 12rem)) [center-end] minmax(3rem, 1fr) [full-end]
+header
+    grid-column: center-start / center-end
+    grid-row: 1 / 2
+main
+    grid-column: center-start / center-end
+    grid-row: 2 / -1
+    display: grid
+    grid-template-columns: [center-start] repeat(12, minmax(min-content, 12rem)) [center-end]
+    gap: 0 1.6rem
+    grid-template-rows: min-content
+    align-items: start
+    @include respond($breakpoint: tab-port)
+        justify-content: center
+    
+
+
+    

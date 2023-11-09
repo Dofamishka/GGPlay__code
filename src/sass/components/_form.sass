@@ -1,0 +1,212 @@
+.form
+    grid-column: 7 / -1
+    @include respond($breakpoint: tab-port)
+        grid-column: 1 / -1
+    &__data
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
+        gap: 0 1.6rem
+        @include respond($breakpoint: phone)
+            grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
+    &__title
+        margin-bottom: 6rem
+        grid-column: 1 / -1
+        @include respond($breakpoint: tab-port)
+            text-align: center
+    &__lessonTopic
+        grid-column: span 8 
+        @include respond($breakpoint: tab-port)
+            grid-column: span 8 
+        @include respond($breakpoint: phone)
+            grid-column: 1 / -1
+    &__class
+        grid-column: span 2
+        font-size: 1.8rem
+        &_select
+            font-size: 1.8rem
+            
+    &__lessonTips
+        grid-column: 1 / -1
+        margin-bottom: 4.8rem
+
+        &_button
+            color: $color-blue-dark
+            display: flex
+            align-items: center 
+            cursor: pointer
+        &_name
+            display: flex
+            flex-wrap: wrap
+            margin-bottom: 2rem
+        &_link
+            background-color: $color-gray-extraLight
+            border-radius: 10rem
+            padding: 1rem 1.6rem
+            margin-bottom: 0.8rem
+            cursor: pointer
+            &.lessonTips_link-disappearing
+                display: none
+            &:not(:last-child)
+                margin-right: 0.8rem
+            
+
+    &__message
+        grid-column: 1 / -1
+        position: relative
+        margin-bottom: 3rem !important
+        
+        &_text
+            min-height: 6.8rem
+            resize: none
+    &__plus
+        height: 2.4rem
+        width: 2.4rem
+        margin-right: 0.8rem
+    &__buttonNext
+        grid-column: span 4
+    input.form__buttonNext
+        display: none
+    &__buttonBack
+        grid-column: span 2
+.message
+    &__before
+        position: absolute
+        display: flex
+        justify-content: space-between
+        width: 100%
+        left: 0
+        padding: 1.5rem
+        margin-top: 13rem
+    &__errorText
+        color: $color-red
+        opacity: 0
+.message__errorText.error
+    opacity: 1
+.message__lenght.error
+    color: $color-red
+
+.input
+    &__wrapper
+        display: flex
+        align-items: center
+        border: 0.12rem solid $color-gray
+        border-radius: 1rem
+        padding: 1.7rem 1.5rem
+        position: relative
+        margin-bottom: 2rem
+    &__text
+        color: $color-dark
+        width: 100%
+        &::placeholder 
+            color: $color-gray-dark
+
+    &__label
+        background-color: $color-white
+        padding: 0 0.5rem
+        position: absolute
+        top: -1rem
+    &__cross
+        opacity: 0
+        height: 1.7rem
+        width: 1.7rem
+.input__lessonTopic:focus ~ .input__cross
+    opacity: 1
+.input__lessonTopic:focus
+    color: $color-dark
+
+.btn
+    border-radius: 1.2rem
+    padding: 1.8rem 5.2rem
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    align-self: start
+    &__blueBorder
+        border: 0.1rem solid $color-blue-dark
+        color: $color-blue-dark
+    &__gray
+        background: $color-gray-extraLight
+        color: $color-gray-dark
+#class
+    width: 0
+    height: 0
+
+.select
+    display: flex
+    justify-content: space-between
+    width: 100%
+    position: relative
+    cursor: pointer
+    &__icon
+        width: 2.4rem
+        height: 2.4rem
+        display: block
+    &__list
+        display: none
+        margin-top: 3.3rem
+        position: absolute
+        background-color: $color-white
+        z-index: 1
+        padding: 0 1.6rem
+        border-radius: 1.2rem
+        border: 0.12rem solid $color-gray
+        width: 100%
+        top: 0
+        left: 0
+        &_link
+            cursor: pointer
+            line-height: 4rem
+            position: relative
+            display: flex
+            justify-content: space-between
+            align-items: center
+    &__check
+        height: 2rem
+        width: 2rem
+        display: none
+.select__check.active
+    display: block
+
+.select__list_link.active
+    font-weight: 700
+
+.list__active
+    font-weight: 600
+.select.active + .select__list
+    display: block
+.select__icon.active
+    transform: rotate(180deg)
+.lessonTips_link-disappearing.active
+    display: block
+.form__message.error
+    border: 0.12rem solid $color-red
+.message__label.error
+    color: $color-red
+.form__class.active
+    border: 0.12rem solid $color-blue-dark
+.class__label.active
+    color: $color-blue-dark
+.form__buttonNext-input.active ~ .form__buttonNext
+    background-color: $color-blue-dark
+    color: $color-white
+.form__lessonTopic.active 
+    border: 0.12rem solid $color-blue-dark
+.form__lessonTopic.active > .input__label
+    color: $color-blue-dark  
+.form__lessonTips.active
+    max-width: 71rem
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
